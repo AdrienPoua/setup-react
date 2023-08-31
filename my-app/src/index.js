@@ -1,22 +1,10 @@
 import React from "react";
-import { createRoot } from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Home from "./pages/Home";
-import NotFound from "./pages/NotFound";
-import "./assets/styles/resets.scss"
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Home />,
-  },
-  {
-    path: "*",
-    element: <NotFound />,
-  },
-]);
+import ReactDOM from "react-dom"; // Correction ici
+import "./assets/styles/resets.scss";
+import App from './app';
 
-createRoot(document.getElementById("root")).render(
+ReactDOM.createRoot(document.getElementById("root")).render(
   <>
-    <RouterProvider router={router} />
+    <App /> 
   </>
 );
